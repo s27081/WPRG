@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$range = 10;
+$fib[0] = 0;
+$fib[1] = 1;
+
+echo "0. " . $fib[0] . "<br>";
+echo "1. " . $fib[1] . "<br>";
+
+for($num=2; $num <=$range; $num++){
+	$fib[$num] = $fib[$num -1] + $fib[$num -2];
+    if ($fib[$num] % 2 == 1){
+    	echo $num . ". ". $fib[$num]. "<br>";
+    }
+}
+?>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$range=15;
+
+for ($number=0; $number <= $range; $number++) {
+    if ($number <= 1) {
+        echo $number . " nie jest pierwsza<br>";
+        continue;
+    }
+
+    $isPrime = true;
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i == 0) {
+            $isPrime = false;
+            break;
+        }
+    }
+
+    if ($isPrime) {
+        echo $number . " jest pierwsza<br>";
+    } else {
+        echo $number . " nie jest pierwsza<br>";
+    }
+}
+?>
+
+</body>
+</html>

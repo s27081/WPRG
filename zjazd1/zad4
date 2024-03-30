@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+$text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+$textTable = explode(" ", $text);
+
+for($i=0; $i<count($textTable);$i++){
+	$element=$textTable[$i];
+    $fixedElement='';
+	for($j=0; $j<strlen($element);$j++){
+
+		if($element[$j] != "," && $element[$j] != "."){
+    		$fixedElement .= $element[$j];
+    	}
+    }
+    $textTable[$i]=$fixedElement;    
+}
+
+foreach($textTable as $key => $value){
+	if($key % 2 == 0){
+    	$assocArray[$value] = '';
+        $lastKey = $value;
+    }else{
+    	$assocArray[$lastKey] = $value;
+    }
+}
+
+foreach ($assocArray as $key => $value) {
+    echo "$key => $value<br>";
+}
+
+?>
+
+</body>
+</html>
