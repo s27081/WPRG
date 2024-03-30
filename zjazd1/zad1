@@ -1,0 +1,19 @@
+<?php
+$table[0]='banan';
+$table[1]='apple';
+$table[2]='pineapple';
+
+foreach($table as $key => $fruit)
+{	
+	if($fruit[0] == "p"){
+    	echo "<br>Owoc zaczyna się na literę p: ". $fruit . "<br>";
+    }
+	$iterations = strlen($fruit)-1;
+    $reverseFruit = "";
+    while($iterations >= 0){
+    	$reverseFruit = $reverseFruit . $fruit[$iterations];
+        --$iterations;
+    }
+    echo $reverseFruit. "<br>";
+}
+?>
